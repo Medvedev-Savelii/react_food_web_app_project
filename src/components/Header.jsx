@@ -1,20 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+function Header() {
   return (
     <nav className="blue lighten-4">
       <div className="nav-wrapper">
-        <a href="!#" className="brand-logo">
+        <Link to="/" className="brand-logo">
           React Movies
-        </a>
+        </Link>
+
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>
-            <a href="!#">Repo</a>
+            <Link to="/contacts">Contact</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
           </li>
         </ul>
       </div>
     </nav>
   );
-};
+}
 
 export { Header };

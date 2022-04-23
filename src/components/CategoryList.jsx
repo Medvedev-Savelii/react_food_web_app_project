@@ -1,8 +1,6 @@
-import React from "react";
 import { CategoryItem } from "../components/CategoryItem";
 
-function CategoryList(props) {
-  const { catalog = [] } = props;
+function CategoryList({ catalog = [] }) {
   return (
     <div className="list">
       {catalog.map((el) => (

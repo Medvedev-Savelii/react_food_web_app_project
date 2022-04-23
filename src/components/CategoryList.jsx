@@ -6,7 +6,7 @@ function CategoryList(props) {
   return (
     <div className="list">
       {catalog.map((el) => (
-        <CategoryItem />
+        <CategoryItem key={el.idCategory} {...el} />
       ))}
     </div>
   );

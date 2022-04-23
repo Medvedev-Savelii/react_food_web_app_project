@@ -23,6 +23,27 @@ function Recipe() {
           <h6>{recipe.strCategory}</h6>
           {recipe.strArea ? <h6>Area: {recipe.strArea}</h6> : null}
           <p>{recipe.strInstructions}</p>
+          <table className="centred">
+            <thead>
+              <tr>
+                <th>Ingredient</th>
+                <th>Measure</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.keys(recipe).map((key) => {
+                if (key.includes("Ingredient") && recipe[key]) {
+                  return (
+                    <tr key={key}>
+                      <td>{recipe[key]}</td>
+                      <td>{recipe[`strMeasure${key.slice(13)}`]}</td>
+                    </tr>
+                  );
+                }
+                return null;
+              })}
+            </tbody>
+          </table>
 
           {recipe.strYoutube ? (
             <div className="row">
